@@ -6,8 +6,10 @@ interface IProps {
 export default function StatInfo({label, number}: IProps) {
   return (
     <div className="grid pb-1">
-      <span className="text-[#4B6A9B] text-[13px] mb-2">{label}</span>
-      <span className="text-[#2B3442] font-bold text-[22px] leading-none">
+      <span className="text-light-blue dark:text-dark-white text-xsm mb-2">
+        {label}
+      </span>
+      <span className="text-light-gunmetal dark:text-dark-white font-bold text-xll leading-none">
         {number}
       </span>
     </div>

@@ -31,4 +31,5 @@ module.exports = {
   },
   plugins: ['@typescript-eslint', 'react', 'prettier'],
   rules: {},
+  ignorePatterns: ['vite.config.ts'],
 };
