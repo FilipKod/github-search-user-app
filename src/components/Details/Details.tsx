@@ -13,7 +13,7 @@ export default function Details({data}: IProps) {
         detail_key="twitter_username"
         detail_value={data.twitter_username}
       />
-      <ListItem detail_key="html_url" detail_value={data.blog} />
+      <ListItem detail_key="blog" detail_value={data.blog} />
       <ListItem detail_key="company" detail_value={data.company} />
     </ul>
   );

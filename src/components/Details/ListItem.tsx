@@ -4,7 +4,7 @@ import WebsiteIcon from '../Icons/WebsiteIcon';
 import TwitterIcon from '../Icons/TwitterIcon';
 
 interface IProps {
-  detail_key: 'company' | 'location' | 'html_url' | 'twitter_username';
+  detail_key: 'company' | 'location' | 'blog' | 'twitter_username';
   detail_value: string | null;
 }
 
@@ -14,8 +14,7 @@ export default function ListItem({detail_key, detail_value}: IProps) {
   const renderIcon = () => {
     if (detail_key === 'company')
       return <CompanyIcon className={iconClassName} />;
-    if (detail_key === 'html_url')
-      return <WebsiteIcon className={iconClassName} />;
+    if (detail_key === 'blog') return <WebsiteIcon className={iconClassName} />;
     if (detail_key === 'twitter_username')
       return <TwitterIcon className={iconClassName} />;
     if (detail_key === 'location')

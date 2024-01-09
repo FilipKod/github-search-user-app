@@ -24,7 +24,8 @@
     "src",
     ".eslintrc.cjs",
     "tailwind.config.js",
-    "postcss.config.js"
+    "postcss.config.js",
+    "token.ts"
   ],
   "references": [{"path": "./tsconfig.node.json"}]
 }
