@@ -22,15 +22,33 @@ export default function ListItem({detail_key, detail_value}: IProps) {
     return null;
   };
 
+  const displayValue = () => {
+    if (detail_value) {
+      if (detail_key === 'blog') {
+        return (
+          <a className="hover:underline" href={detail_value}>
+            {detail_value}
+          </a>
+        );
+      }
+      return detail_value;
+    }
+    return 'Not Available';
+  };
+
   return (
     <li
       className={
         'flex items-center ' +
-        `${detail_value === null ? 'opacity-50' : 'opacity-100'}`
+        `${
+          detail_value === null || detail_value.length === 0
+            ? 'opacity-50'
+            : 'opacity-100'
+        }`
       }>
       <span className="w-8">{renderIcon()}</span>
       <span className="text-[15px] leading-none text-light-blue dark:text-dark-white">
-        {detail_value || 'Not Available'}
+        {displayValue()}
       </span>
     </li>
   );

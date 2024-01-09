@@ -6,6 +6,7 @@ interface IProps {
 }
 
 export default function Details({data}: IProps) {
+  console.log(data.blog);
   return (
     <ul className="grid grid-cols-[268px_auto] gap-y-4 gap-x-3">
       <ListItem detail_key="location" detail_value={data.location} />
