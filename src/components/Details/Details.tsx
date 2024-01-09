@@ -1,14 +1,8 @@
+import {User} from '../../types/User';
 import ListItem from './ListItem';
 
-export interface IData {
-  html_url: string;
-  location: string;
-  twitter_username: string | null;
-  company: string;
-}
-
 interface IProps {
-  data: IData;
+  data: User;
 }
 
 export default function Details({data}: IProps) {
@@ -19,7 +13,7 @@ export default function Details({data}: IProps) {
         detail_key="twitter_username"
         detail_value={data.twitter_username}
       />
-      <ListItem detail_key="html_url" detail_value={data.html_url} />
+      <ListItem detail_key="html_url" detail_value={data.blog} />
       <ListItem detail_key="company" detail_value={data.company} />
     </ul>
   );
