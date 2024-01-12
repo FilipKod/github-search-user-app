@@ -21,17 +21,17 @@ export default function UserBox({userData}: IProps) {
         <img src={userData.avatar_url} alt="github profile" />
       </div>
       <div>
-        <div className="grid items-center grid-cols-[repeat(2,_auto)] gap-y-0 grid-rows-3 justify-start">
+        <div className="grid items-center grid-cols-[repeat(2,_auto)] gap-y-0 grid-rows-3 justify-start lg:justify-between">
           <div className="lg:hidden rounded-full w-[70px] h-[70px] md:w-[117px] md:h-[117px] overflow-hidden row-span-3 col-start-1 col-end-2 mr-5 md:mr-10">
             <img src={userData.avatar_url} alt="github profile" />
           </div>
           <h1 className="font-bold text-base md:text-2xl text-light-gunmetal dark:text-dark-white self-end">
             {userData.name}
           </h1>
-          <time className="text-xsm md:text-base text-light-gray dark:text-dark-white col-start-2 col-end-3 self-end md:self-start">
+          <time className="text-xsm md:text-base text-light-gray dark:text-dark-white col-start-2 col-end-3 self-end md:self-start lg:self-center">
             Joined {joinedDateFormat}
           </time>
-          <h3 className="text-xsm md:text-base text-azure lg:mt-1 inline-block row-start-2 row-end-3 col-start-2 col-end-3">
+          <h3 className="text-xsm md:text-base text-azure lg:mt-1 inline-block row-start-2 row-end-3 col-start-2 col-end-3 lg:col-start-1 lg:col-end-2">
             @{userData.login}
           </h3>
         </div>
