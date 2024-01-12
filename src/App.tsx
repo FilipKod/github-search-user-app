@@ -5,7 +5,8 @@ import {useState} from 'react';
 import Header from './components/Header';
 import SearchBar from './components/SearchBar';
 import UserBox from './components/UserBox';
-import token from '../token';
+
+const apiKey = import.meta.env.VITE_GITHUB_TOKEN;
 
 function App() {
   const [username, setUsername] = useState<string>('Filipkod');
@@ -19,7 +20,7 @@ function App() {
         `https://api.github.com/users/${username}`,
         {
           headers: {
-            Authorization: `Bearer ${token}`,
+            Authorization: `Bearer ${apiKey}`,
           },
         }
       );
