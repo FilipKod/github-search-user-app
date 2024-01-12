@@ -47,7 +47,7 @@ export default function ListItem({detail_key, detail_value}: IProps) {
         }`
       }>
       <span className="w-8">{renderIcon()}</span>
-      <span className="text-[15px] leading-none text-light-blue dark:text-dark-white">
+      <span className="text-xsm md:text-[15px] leading-none text-light-blue dark:text-dark-white">
         {displayValue()}
       </span>
     </li>

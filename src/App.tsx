@@ -32,8 +32,8 @@ function App() {
   };
 
   return (
-    <div className="bg-light-ghostwhite dark:bg-dark-gunmetal min-h-screen pt-36">
-      <div className="font-space max-w-[730px] mx-auto">
+    <div className="bg-light-ghostwhite dark:bg-dark-gunmetal min-h-screen pt-8 md:pt-36 pb-8 md:pb-36">
+      <div className="font-space max-w-xs md:max-w-xl lg:max-w-3xl mx-auto">
         <Header />
         <SearchBar isUserNotFound={isError} onFormSubmit={onSubmitHandler} />
         <main>{userData && <UserBox userData={userData} />}</main>

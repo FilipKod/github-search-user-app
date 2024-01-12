@@ -16,26 +16,29 @@ export default function UserBox({userData}: IProps) {
   })}`;
 
   return (
-    <div className="bg-light-white dark:bg-dark-blue dark:shadow-none rounded-2xl p-12 shadow-light grid grid-cols-[120px_auto] gap-x-9">
-      <div className="rounded-full w-[117px] h-[117px] overflow-hidden">
+    <div className="bg-light-white dark:bg-dark-blue dark:shadow-none rounded-2xl px-6 pt-8 pb-12 md:p-10 lg:p-12 shadow-light grid lg:grid-cols-[120px_auto] lg:gap-x-9">
+      <div className="hidden lg:block rounded-full w-[117px] h-[117px] overflow-hidden">
         <img src={userData.avatar_url} alt="github profile" />
       </div>
       <div>
-        <div className="flex items-center justify-between">
-          <h1 className="font-bold text-2xl text-light-gunmetal dark:text-dark-white">
+        <div className="grid items-center grid-cols-[repeat(2,_auto)] gap-y-0 grid-rows-3 justify-start">
+          <div className="lg:hidden rounded-full w-[70px] h-[70px] md:w-[117px] md:h-[117px] overflow-hidden row-span-3 col-start-1 col-end-2 mr-5 md:mr-10">
+            <img src={userData.avatar_url} alt="github profile" />
+          </div>
+          <h1 className="font-bold text-base md:text-2xl text-light-gunmetal dark:text-dark-white self-end">
             {userData.name}
           </h1>
-          <span className="text-base text-light-gray dark:text-dark-white">
+          <time className="text-xsm md:text-base text-light-gray dark:text-dark-white col-start-2 col-end-3 self-end md:self-start">
             Joined {joinedDateFormat}
-          </span>
+          </time>
+          <h3 className="text-xsm md:text-base text-azure lg:mt-1 inline-block row-start-2 row-end-3 col-start-2 col-end-3">
+            @{userData.login}
+          </h3>
         </div>
-        <h3 className="text-base text-azure mt-1 inline-block">
-          @{userData.login}
-        </h3>
-        <div className="text-base text-light-blue mt-5 mb-8 w-full dark:text-dark-white dark:opacity-75">
+        <div className="text-xsm md:text-base leading-6 text-light-blue mt-5 mb-8 w-full dark:text-dark-white dark:opacity-75">
           {userData.bio ? userData.bio : 'This profile has no bio'}
         </div>
-        <div className="bg-light-ghostwhite dark:bg-dark-gunmetal rounded-[10px] px-8 py-4 grid grid-cols-3 mb-9">
+        <div className="bg-light-ghostwhite dark:bg-dark-gunmetal rounded-[10px] px-5 md:px-8 py-3 md:py-4 grid grid-cols-3 mb-9 text-center">
           <StatInfo label="Repos" number={userData.public_repos} />
           <StatInfo label="Followers" number={userData.followers} />
           <StatInfo label="Following" number={userData.following} />
