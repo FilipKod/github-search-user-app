@@ -6,8 +6,6 @@ import Header from './components/Header';
 import SearchBar from './components/SearchBar';
 import UserBox from './components/UserBox';
 
-const apiKey = import.meta.env.VITE_GITHUB_TOKEN;
-
 function App() {
   const [username, setUsername] = useState<string>('Filipkod');
 
@@ -17,12 +15,7 @@ function App() {
     queryKey: ['user', username],
     queryFn: async () => {
       const response = await axios.get(
-        `https://api.github.com/users/${username}`,
-        {
-          headers: {
-            Authorization: `Bearer ${apiKey}`,
-          },
-        }
+        `https://api.github.com/users/${username}`
       );
       return response.data;
     },
